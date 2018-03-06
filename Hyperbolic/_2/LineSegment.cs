@@ -20,8 +20,8 @@ namespace Metria.Hyperbolic._2
                 }
                 else
                 {
-                    this._b = P.Clone() as Point;
                     this._a = Q.Clone() as Point;
+                    this._b = P.Clone() as Point;
                 }
             }
             else
@@ -57,7 +57,7 @@ namespace Metria.Hyperbolic._2
             bool retorno = base.Belongs(p);
             //vertical case
             if (Radius == 0)
-                return retorno && (B.Y >= p.Y == p.Y >= A.Y);
+                return retorno && (B.Y <= p.Y == p.Y <= A.Y);
             return retorno && (B.X <= A.X == p.X <= A.X);
         }
 
