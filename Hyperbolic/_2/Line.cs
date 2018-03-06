@@ -232,6 +232,10 @@ namespace Metria.Hyperbolic._2
             {
                 throw new Exception(message: "Não é possivel realizar um corte com o ponto de referencia pertencendo a reta de corte");
             }
+            if (this.Belongs(reference))
+            {
+                throw new Exception(message: "Não é possivel realizar um corte com o ponto de referencia pertencendo a this");
+            }
             Point intersection = this.IntersectionPoint(cut_line);
 
             if(intersection == null)
